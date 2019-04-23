@@ -3,7 +3,7 @@ package performance
 import (
 	"fmt"
 
-	"github.com/blitzprog/color"
+	"github.com/akyoto/color"
 )
 
 // printResult shows the result for a route on the terminal.
