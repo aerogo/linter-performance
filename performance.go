@@ -6,7 +6,7 @@ import (
 	"github.com/aerogo/http/client"
 )
 
-// Linter ...
+// Linter is a performance linter for routes showing size and response time.
 type Linter struct {
 	start map[string]time.Time
 }
@@ -24,7 +24,7 @@ func (linter *Linter) Begin(route string, uri string) {
 }
 
 // End is called after the page has responded.
-func (linter *Linter) End(route string, uri string, response client.Response) {
+func (linter *Linter) End(route string, uri string, response *client.Response) {
 	responseTime := time.Since(linter.start[route]).Nanoseconds() / 1000000
 	responseSize := float64(len(response.RawBytes())) / 1024
 	printResult(route, responseTime, responseSize)
