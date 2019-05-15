@@ -26,6 +26,6 @@ func (linter *Linter) Begin(route string, uri string) {
 // End is called after the page has responded.
 func (linter *Linter) End(route string, uri string, response *client.Response) {
 	responseTime := time.Since(linter.start[route]).Nanoseconds() / 1000000
-	responseSize := float64(len(response.RawBytes())) / 1024
+	responseSize := float64(response.RawLength()) / 1024
 	printResult(route, responseTime, responseSize)
 }
