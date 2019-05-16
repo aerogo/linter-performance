@@ -27,5 +27,5 @@ func (linter *Linter) Begin(route string, uri string) {
 func (linter *Linter) End(route string, uri string, response *client.Response) {
 	responseTime := time.Since(linter.start[route]).Nanoseconds() / 1000000
 	responseSize := float64(response.RawLength()) / 1024
-	printResult(route, responseTime, responseSize)
+	prettyPrint(route, responseTime, responseSize)
 }

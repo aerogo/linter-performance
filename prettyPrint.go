@@ -6,8 +6,8 @@ import (
 	"github.com/akyoto/color"
 )
 
-// printResult shows the result for a route on the terminal.
-func printResult(label string, responseTime int64, responseSize float64) {
+// prettyPrint shows the result for a route on the terminal.
+func prettyPrint(label string, responseTime int64, responseSize float64) {
 	faint := color.New(color.Faint).SprintFunc()
 
 	// Response size color
